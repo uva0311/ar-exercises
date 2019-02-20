@@ -10,3 +10,13 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+puts "Please provide a store name"
+store_name = gets.chomp
+
+store = Store.create(id: 7, name: "#{store_name}", annual_revenue: "", mens_apparel: true, womens_apparel: "" )
+
+if store.errors
+  store.errors.each do |error|
+    pp "#{error}: #{store.errors[error]}"
+  end
+end
